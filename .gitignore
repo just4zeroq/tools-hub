@@ -36,3 +36,8 @@ salt
 
 # Claude
 CLAUDE.md
+
+# Deployment
+deploy.sh
+dist.zip
+deploy.env
