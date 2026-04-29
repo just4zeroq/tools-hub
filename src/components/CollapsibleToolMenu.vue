@@ -34,7 +34,7 @@ const collapsedCategories = useStorage<Record<string, boolean>>(
   },
 );
 
-function toggleCategoryCollapse({ name }: { name }: { name: string }) {
+function toggleCategoryCollapse({ name }: { name: string }) {
   collapsedCategories.value[name] = !collapsedCategories.value[name];
 }
 
