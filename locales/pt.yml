@@ -1,7 +1,9 @@
 home:
   categories:
     newestTools: 'Novas ferramentas'
+    ai: Assistente IA
     favoriteTools: 'Suas ferramentas favoritas'
+    popular: Popular
     allTools: 'Todas as ferramentas'
     favoritesDndToolTip: 'Arraste e solte para reordenar favoritos'
   subtitle: 'Ferramentas online práticas para todos'
@@ -60,6 +62,7 @@ search:
 tools:
   categories:
     favorite-tools: 'Suas ferramentas favoritas'
+    popular: Popular
     crypto: 'Cripto'
     converter: 'Conversores'
     web: 'Web'

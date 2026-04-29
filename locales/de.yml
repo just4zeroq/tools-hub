@@ -8,7 +8,9 @@
 home:
   categories:
     newestTools: Neueste Tools
+    ai: KI-Assistent
     favoriteTools: Deine Lieblingstools
+    popular: Beliebt
     allTools: Alle Tools
     favoritesDndToolTip: 'Ziehen und Ablegen, um Favoriten neu zu ordnen'
   subtitle: 'Praktische Online-Tools für alle'
@@ -82,6 +84,7 @@ search:
 tools:
   categories:
     favorite-tools: Deine Lieblingstools
+    popular: Beliebt
     crypto: Krypto
     converter: Konverter
     web: Web

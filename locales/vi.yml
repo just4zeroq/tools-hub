@@ -1,7 +1,9 @@
 home:
   categories:
     newestTools: Công cụ mới nhất
+    ai: Trợ lý AI
     favoriteTools: 'Công cụ yêu thích của bạn'
+    popular: 'Phổ biến'
     allTools: 'Tất cả công cụ'
     favoritesDndToolTip: 'Kéo thả để sắp xếp lại yêu thích'
   subtitle: 'Công cụ trực tuyến tiện lợi cho mọi người'
@@ -60,6 +62,7 @@ search:
 tools:
   categories:
     favorite-tools: 'Công cụ yêu thích của bạn'
+    popular: 'Phổ biến'
     crypto: Mã hóa
     converter: Chuyển đổi
     web: Web

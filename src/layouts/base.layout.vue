@@ -12,6 +12,7 @@ import { useStyleStore } from '@/stores/style.store';
 import { config } from '@/config';
 import type { ToolCategory } from '@/tools/tools.types';
 import { useToolStore } from '@/tools/tools.store';
+import { usePopularToolsStore } from '@/tools/popular-tools.store';
 import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 
 const themeVars = useThemeVars();
@@ -22,10 +23,19 @@ const commitSha = config.app.lastCommitSha.slice(0, 7);
 const { t } = useI18n();
 
 const toolStore = useToolStore();
-const { favoriteTools, toolsByCategory } = storeToRefs(toolStore);
+const { favoriteTools, tools, toolsByCategory } = storeToRefs(toolStore);
 
-const tools = computed<ToolCategory[]>(() => [
+const popularToolsStore = usePopularToolsStore();
+
+const popularTools = computed(() => {
+  return popularToolsStore.defaultPopularToolPaths
+    .map(path => tools.value.find(tool => tool.path === path))
+    .filter(Boolean) as typeof tools.value;
+});
+
+const toolsList = computed<ToolCategory[]>(() => [
   ...(favoriteTools.value.length > 0 ? [{ name: t('tools.categories.favorite-tools'), components: favoriteTools.value }] : []),
+  ...(popularTools.value.length > 0 ? [{ name: t('tools.categories.popular'), components: popularTools.value }] : []),
   ...toolsByCategory.value,
 ]);
 </script>
@@ -55,7 +65,7 @@ const tools = computed<ToolCategory[]>(() => [
           </div>
         </div>
 
-        <CollapsibleToolMenu :tools-by-category="tools" />
+        <CollapsibleToolMenu :tools-by-category="toolsList" />
       </div>
     </template>
 
@@ -73,12 +83,6 @@ const tools = computed<ToolCategory[]>(() => [
         <c-tooltip :tooltip="$t('home.home')" position="bottom">
           <c-button to="/" circle variant="text" :aria-label="$t('home.home')">
             <NIcon size="25" :component="Home2" />
-          </c-button>
-        </c-tooltip>
-
-        <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
-          <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
-            <icon-mdi:brush-variant text-20px />
           </c-button>
         </c-tooltip>
 

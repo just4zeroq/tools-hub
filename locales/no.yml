@@ -1,7 +1,9 @@
 home:
   categories:
     newestTools: Nyeste verktøy
+    ai: KI-Assistent
     favoriteTools: 'Dine favoritt verktøy'
+    popular: Populære
     allTools: 'Alle verktøyene'
     favoritesDndToolTip: 'Dra og slipp for å omordne favoritter'
   subtitle: 'Praktiske nettbaserte verktøy for alle'
@@ -60,6 +62,7 @@ search:
 tools:
   categories:
     favorite-tools: 'Dine favoritt verktøy'
+    popular: Populære
     crypto: Krypto
     converter: Konvertering
     web: Web

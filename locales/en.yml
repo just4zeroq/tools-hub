@@ -1,7 +1,9 @@
 home:
   categories:
     newestTools: Newest tools
+    ai: AI Assistant
     favoriteTools: 'Your favorite tools'
+    popular: Popular
     allTools: 'All the tools'
     favoritesDndToolTip: 'Drag and drop to reorder favorites'
   subtitle: 'Handy online for everyone'
@@ -60,6 +62,8 @@ search:
 tools:
   categories:
     favorite-tools: 'Your favorite tools'
+    popular: Popular
+    ai: AI Assistant
     crypto: Crypto
     converter: Converter
     web: Web
@@ -392,3 +396,15 @@ tools:
   text-to-binary:
     title: Text to ASCII binary
     description: Convert text to its ASCII binary representation and vice-versa.
+
+  image-generator:
+    title: Image Generator
+    description: Generate images using AI technology.
+
+  voice-generator:
+    title: Voice Generator
+    description: Generate voice audio from text using AI.
+
+  ppt-generator:
+    title: PPT Generator
+    description: Generate PowerPoint presentations using AI.

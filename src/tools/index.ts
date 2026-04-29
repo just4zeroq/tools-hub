@@ -87,14 +87,22 @@ import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
+import { tool as imageGenerator } from './image-generator';
+import { tool as voiceGenerator } from './voice-generator';
+import { tool as pptGenerator } from './ppt-generator';
+import { translate } from '@/plugins/i18n.plugin';
 
 export const toolsByCategory: ToolCategory[] = [
   {
-    name: 'Crypto',
+    name: translate('tools.categories.ai'),
+    components: [imageGenerator, voiceGenerator, pptGenerator],
+  },
+  {
+    name: translate('tools.categories.crypto'),
     components: [tokenGenerator, hashText, bcrypt, uuidGenerator, ulidGenerator, cypher, bip39, hmacGenerator, rsaKeyPairGenerator, passwordStrengthAnalyser, pdfSignatureChecker],
   },
   {
-    name: 'Converter',
+    name: translate('tools.categories.converter'),
     components: [
       dateTimeConverter,
       baseConverter,
@@ -119,7 +127,7 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Web',
+    name: translate('tools.categories.web'),
     components: [
       urlEncoder,
       htmlEntities,
@@ -140,11 +148,11 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Images and videos',
+    name: translate('tools.categories.images and videos'),
     components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder],
   },
   {
-    name: 'Development',
+    name: translate('tools.categories.development'),
     components: [
       gitMemo,
       randomPortGenerator,
@@ -163,19 +171,19 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Network',
+    name: translate('tools.categories.network'),
     components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
   },
   {
-    name: 'Math',
+    name: translate('tools.categories.math'),
     components: [mathEvaluator, etaCalculator, percentageCalculator],
   },
   {
-    name: 'Measurement',
+    name: translate('tools.categories.measurement'),
     components: [chronometer, temperatureConverter, benchmarkBuilder],
   },
   {
-    name: 'Text',
+    name: translate('tools.categories.text'),
     components: [
       loremIpsumGenerator,
       textStatistics,
@@ -187,7 +195,7 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Data',
+    name: translate('tools.categories.data'),
     components: [phoneParserAndFormatter, ibanValidatorAndParser],
   },
 ];

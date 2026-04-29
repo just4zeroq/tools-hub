@@ -1,7 +1,9 @@
 home:
   categories:
     newestTools: Найновіші інструменти
+    ai: ШІ-Асистент
     favoriteTools: 'Ваші улюблені інструменти'
+    popular: Популярні
     allTools: 'Усі інструменти'
     favoritesDndToolTip: 'Перетягніть і відпустіть, щоб змінити порядок улюблених'
   subtitle: 'Зручні онлайн-інструменти для всіх'
@@ -60,6 +62,7 @@ search:
 tools:
   categories:
     favorite-tools: 'Ваші улюблені інструменти'
+    popular: Популярні
     crypto: Крипта
     converter: Конвертер
     web: Веб

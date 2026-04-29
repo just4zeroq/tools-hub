@@ -1,4 +1,21 @@
 /* TEAM */
-Developer: Corentin Thomasset
-Site: https://github.com/CorentinTh
-Twitter: @cthmsst
+Developer: AI Tools Team
+Site: https://github.com/CorentinTh/it-tools
+Original Author: Corentin Thomasset
+
+/* THANKS */
+Vue.js - https://vuejs.org
+Naive UI - https://www.naiveui.com
+
+/* TECHNOLOGY */
+Frontend: Vue 3 + TypeScript
+UI Library: Naive UI
+Deployment: Vercel
+
+/* STANDARDS */
+HTML5, CSS3, ECMAScript 2021+
+
+/* SITE */
+Last update: 2026-04-29
+Language: Multilingual
+License: GPL-3.0
