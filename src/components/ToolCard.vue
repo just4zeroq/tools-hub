@@ -43,8 +43,9 @@ const theme = useThemeVars();
 <style scoped lang="less">
 .tool-card {
   position: relative;
-  border: 1px solid transparent;
+  border: 1px solid v-bind('themeVars.borderColor');
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
 
