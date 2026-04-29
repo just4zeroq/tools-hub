@@ -4,12 +4,12 @@ home:
     favoriteTools: 'Công cụ yêu thích của bạn'
     allTools: 'Tất cả công cụ'
     favoritesDndToolTip: 'Kéo thả để sắp xếp lại yêu thích'
-  subtitle: 'Công cụ cho nhà phát triển.'
+  subtitle: 'Công cụ trực tuyến tiện lợi cho mọi người'
   toggleMenu: 'Chuyển đổi menu'
   home: Trang chủ
   uiLib: 'Thư viện UI'
   support: 'Hỗ trợ phát triển IT Tools'
-  buyMeACoffee: 'Ủng hộ tác giả'
+  buyMeACoffee: 'Đăng nhập'
   follow:
     title: 'Bạn thích IT-tools?'
     p1: 'Hãy cho chúng tôi một ngôi sao trên'

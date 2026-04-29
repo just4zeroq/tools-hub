@@ -11,12 +11,12 @@ home:
     favoriteTools: Deine Lieblingstools
     allTools: Alle Tools
     favoritesDndToolTip: 'Ziehen und Ablegen, um Favoriten neu zu ordnen'
-  subtitle: Praktische Tools für Entwickler
+  subtitle: 'Praktische Online-Tools für alle'
   toggleMenu: Menü umschalten
   home: Startseite
   uiLib: UI-Bibliothek
   support: Unterstütze die Entwicklung von IT-Tools
-  buyMeACoffee: Kauf mir einen Kaffee
+  buyMeACoffee: 'Anmelden'
   follow:
     title: Magst du IT-Tools?
     p1: Gib uns einen Stern auf

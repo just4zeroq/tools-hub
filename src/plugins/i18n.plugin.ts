@@ -3,9 +3,28 @@ import { get } from '@vueuse/core';
 import type { Plugin } from 'vue';
 import { createI18n } from 'vue-i18n';
 
+function getBrowserLocale(): string {
+  const navigatorLocale = navigator.language || (navigator as any).userLanguage;
+
+  if (!navigatorLocale) {
+    return 'en';
+  }
+
+  const locale = navigatorLocale.toLowerCase().split(/[-_]/)[0];
+
+  const availableLocales = ['en', 'de', 'es', 'fr', 'no', 'pt', 'ru', 'uk', 'zh', 'vi'];
+
+  if (availableLocales.includes(locale)) {
+    return locale;
+  }
+
+  return 'en';
+}
+
 const i18n = createI18n({
   legacy: false,
-  locale: 'en',
+  locale: getBrowserLocale(),
+  fallbackLocale: 'en',
   messages,
 });
 

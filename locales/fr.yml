@@ -4,11 +4,11 @@ home:
     favoriteTools: 'Vos outils favoris'
     allTools: 'Tous les outils'
     favoritesDndToolTip: 'Faites glisser et déposez pour réordonner vos favoris'
-  subtitle: 'Outils pour les développeurs'
+  subtitle: 'Outils en ligne pratiques pour tous'
   toggleMenu: 'Menu'
   home: Accueil
   uiLib: 'UI Lib'
-  buyMeACoffee: 'Soutenez IT-Tools'
+  buyMeACoffee: 'Connexion'
   follow:
     title: 'Vous aimez it-tools ?'
     p1: 'Soutenez-nous avec une star sur'

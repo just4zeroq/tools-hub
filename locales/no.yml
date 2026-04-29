@@ -4,12 +4,12 @@ home:
     favoriteTools: 'Dine favoritt verktøy'
     allTools: 'Alle verktøyene'
     favoritesDndToolTip: 'Dra og slipp for å omordne favoritter'
-  subtitle: 'Nyttige verktøy for utviklere'
+  subtitle: 'Praktiske nettbaserte verktøy for alle'
   toggleMenu: 'Vekslemenmy'
   home: Hjem
   uiLib: 'UI Bib'
   support: 'Støtt utviklingen av IT-Tools'
-  buyMeACoffee: 'Kjøp en kaffe til meg'
+  buyMeACoffee: 'Logg inn'
   follow:
     title: 'Liker du it-tools?'
     p1: 'Gi oss en stjerne på'
