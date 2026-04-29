@@ -7,16 +7,17 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 </script>
 
 <template>
-  <n-layout has-sider>
+  <n-layout has-sider class="tech-layout">
     <n-layout-sider
       bordered
       collapse-mode="width"
       :collapsed-width="0"
-      :width="240"
+      :width="260"
       :collapsed="isMenuCollapsed"
       :show-trigger="false"
       :native-scrollbar="false"
       :position="siderPosition"
+      class="tech-sider"
     >
       <slot name="sider" />
     </n-layout-sider>
@@ -34,12 +35,13 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #00000080;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
   cursor: pointer;
+  z-index: 100;
 }
 
 .content {
-  // background-color: #f1f5f9;
   ::v-deep(.n-layout-scroll-container) {
     padding: 26px;
   }
@@ -47,5 +49,47 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 
 .n-layout {
   height: 100vh;
+}
+
+.tech-layout {
+  ::v-deep(.n-layout-sider) {
+    background: linear-gradient(180deg,
+      rgba(24, 160, 88, 0.02) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(24, 160, 88, 0.02) 100%
+    ) !important;
+  }
+}
+
+.tech-sider {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(24, 160, 88, 0.3) 20%,
+      rgba(24, 160, 88, 0.3) 80%,
+      transparent 100%
+    );
+  }
+}
+
+// Dark mode
+.dark {
+  .tech-sider::before {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(139, 92, 246, 0.3) 20%,
+      rgba(139, 92, 246, 0.3) 80%,
+      transparent 100%
+    );
+  }
 }
 </style>
