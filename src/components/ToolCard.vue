@@ -9,43 +9,49 @@ const theme = useThemeVars();
 </script>
 
 <template>
-  <router-link :to="tool.path" class="decoration-none">
-    <c-card class="h-full tool-card">
-      <div flex items-center justify-between>
-        <n-icon class="tool-icon" size="40" :component="tool.icon" />
+  <div class="tool-card-wrapper">
+    <router-link :to="tool.path" class="decoration-none">
+      <c-card class="h-full tool-card">
+        <div flex items-center justify-between>
+          <n-icon class="tool-icon" size="40" :component="tool.icon" />
 
-        <div flex items-center gap-8px>
-          <div
-            v-if="tool.isNew"
-            class="new-badge"
-            :style="{
-              'background-color': theme.primaryColor,
-            }"
-          >
+          <div v-if="tool.isNew" class="new-badge" :style="{ backgroundColor: theme.primaryColor }">
             {{ $t('toolCard.new') }}
           </div>
-
-          <FavoriteButton :tool="tool" />
         </div>
-      </div>
 
-      <div class="tool-name">
-        {{ tool.name }}
-      </div>
+        <div class="tool-name">
+          {{ tool.name }}
+        </div>
 
-      <div class="tool-desc">
-        {{ tool.description }}
-      </div>
-    </c-card>
-  </router-link>
+        <div class="tool-desc">
+          {{ tool.description }}
+        </div>
+      </c-card>
+    </router-link>
+
+    <div class="favorite-btn">
+      <FavoriteButton :tool="tool" />
+    </div>
+  </div>
 </template>
 
 <style scoped lang="less">
+.tool-card-wrapper {
+  position: relative;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+
 .tool-card {
   position: relative;
-  border: 1px solid v-bind('themeVars.borderColor');
+  border: 1px solid transparent;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
 
@@ -142,7 +148,6 @@ const theme = useThemeVars();
   }
 }
 
-// Dark mode specific styles
 .dark .tool-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
 

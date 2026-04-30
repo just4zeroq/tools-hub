@@ -12,23 +12,14 @@ const route = useRoute();
 const makeLabel = (tool: Tool) => () => h(RouterLink, { to: tool.path }, { default: () => tool.name });
 const makeIcon = (tool: Tool) => () => h(MenuIconItem, { tool });
 
-// Default: all categories collapsed on first visit
 const collapsedCategories = useStorage<Record<string, boolean>>(
   'menu-tool-option:collapsed-categories',
-  null, // null = first visit, no storage yet
+  {},
   undefined,
   {
     deep: true,
     serializer: {
-      read: v => {
-        if (!v) {
-          // First visit: collapse all categories by default
-          const allCollapsed: Record<string, boolean> = {};
-          toolsByCategory.value.forEach(cat => { allCollapsed[cat.name] = true; });
-          return allCollapsed;
-        }
-        return JSON.parse(v);
-      },
+      read: v => (v ? JSON.parse(v) : {}),
       write: v => JSON.stringify(v),
     },
   },
