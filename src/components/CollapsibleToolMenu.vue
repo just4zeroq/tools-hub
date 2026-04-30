@@ -2,6 +2,7 @@
 import { useStorage } from '@vueuse/core';
 import { useThemeVars } from 'naive-ui';
 import { RouterLink, useRoute } from 'vue-router';
+import { watch } from 'vue';
 import MenuIconItem from './MenuIconItem.vue';
 import type { Tool, ToolCategory } from '@/tools/tools.types';
 
@@ -15,15 +16,16 @@ const makeIcon = (tool: Tool) => () => h(MenuIconItem, { tool });
 const collapsedCategories = useStorage<Record<string, boolean>>(
   'menu-tool-option:collapsed-categories',
   {},
-  undefined,
-  {
-    deep: true,
-    serializer: {
-      read: v => (v ? JSON.parse(v) : {}),
-      write: v => JSON.stringify(v),
-    },
-  },
 );
+
+// Initialize: collapse all categories on first visit
+watch(collapsedCategories, (val) => {
+  if (Object.keys(val).length === 0 && toolsByCategory.value.length > 0) {
+    toolsByCategory.value.forEach(cat => {
+      collapsedCategories.value[cat.name] = true;
+    });
+  }
+}, { immediate: true });
 
 function toggleCategoryCollapse({ name }: { name: string }) {
   collapsedCategories.value[name] = !collapsedCategories.value[name];
