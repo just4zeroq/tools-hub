@@ -51,6 +51,7 @@ const theme = useThemeVars();
 .tool-card {
   position: relative;
   border: 1px solid transparent;
+  border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
